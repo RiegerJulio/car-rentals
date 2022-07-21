@@ -1,16 +1,16 @@
 import CarCategoryModel from "../model/CarCategoryModel";
-import ICategoryRepositoryDTO from "./DTOs/ICategoryRepositoryDTO";
-import ICategoryRepository from "./Interfaces/ICategoryRepository";
+import ICarCategoryDTO from "./DTOs/ICarCategoryDTO";
+import ICarCategoryRepository from "./Interfaces/ICarCategoryRepository";
 
 
-export default class carCategoryRepository implements ICategoryRepository {
+export default class carCategoryRepository implements ICarCategoryRepository {
   private categories: CarCategoryModel[];
 
   constructor() {
     this.categories = [];
   }
 
-  create({ name, description }: ICategoryRepositoryDTO): void {
+  create({ name, description }: ICarCategoryDTO): void {
     const category = new CarCategoryModel();
 
     Object.assign(category, {

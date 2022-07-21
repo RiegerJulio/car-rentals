@@ -1,6 +1,6 @@
 import { v4 as uuidV4 } from 'uuid';
 
-export default class CarCategoryModel {
+export default class CarSpecificationModel {
   id?: string;
   name: string;
   description: string;

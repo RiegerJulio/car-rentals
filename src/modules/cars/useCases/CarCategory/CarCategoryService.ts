@@ -1,12 +1,12 @@
-import ICategoryRepository from "../../repositories/Interfaces/ICategoryRepository";
+import ICarCategoryRepository from "../../repositories/Interfaces/ICarCategoryRepository";
 
 interface IRequest {
   name: string;
   description: string;
 }
 
-export default class CreateCarCategoryService {
-  constructor(private carCategoryRepository: ICategoryRepository) {}
+export default class CarCategoryService {
+  constructor(private carCategoryRepository: ICarCategoryRepository) {}
 
   public execute({ name, description }: IRequest): void {
     const checkCategoryExistance = this.carCategoryRepository.findByName(name);
