@@ -1,11 +1,11 @@
-import ICarSpecificationRepository from "../../repositories/Interfaces/ICarSpecificationRepository";
+import ICarSpecificationRepository from "../../../repositories/Interfaces/ICarSpecificationRepository";
 
 interface IRequest {
   name: string;
   description: string;
 }
 
-export default class NewCategoryService {
+export default class CreateCarSpecificationService {
   constructor(private newCategoryRepository: ICarSpecificationRepository) {}
 
   public execute({ name, description }: IRequest): void {
