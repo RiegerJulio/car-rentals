@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import CarCategoryService from "./CarCategoryService"
+import CarCategoryService from "./CreateCarCategoryService"
 
-export default class CarCategoryController {
+export default class CreateCarCategoryController {
 
   constructor(private createCategoryService: CarCategoryService) {}
 

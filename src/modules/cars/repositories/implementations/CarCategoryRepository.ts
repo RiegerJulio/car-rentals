@@ -1,13 +1,22 @@
-import CarCategoryModel from "../model/CarCategoryModel";
-import ICarCategoryDTO from "./DTOs/ICarCategoryDTO";
-import ICarCategoryRepository from "./Interfaces/ICarCategoryRepository";
+import CarCategoryModel from "../../model/CarCategoryModel";
+import ICarCategoryDTO from "../DTOs/ICarCategoryDTO";
+import ICarCategoryRepository from "../Interfaces/ICarCategoryRepository";
 
 
-export default class carCategoryRepository implements ICarCategoryRepository {
+export default class CarCategoryRepository implements ICarCategoryRepository {
   private categories: CarCategoryModel[];
+  
+  private static INSTANCE: CarCategoryRepository;
 
   constructor() {
     this.categories = [];
+  }
+
+  public static getInstance(): CarCategoryRepository {
+    if (!CarCategoryRepository.INSTANCE) {
+      CarCategoryRepository.INSTANCE = new CarCategoryRepository();
+    }
+    return CarCategoryRepository.INSTANCE;
   }
 
   create({ name, description }: ICarCategoryDTO): void {

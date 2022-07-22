@@ -1,11 +1,11 @@
-import ICarCategoryRepository from "../../repositories/Interfaces/ICarCategoryRepository";
+import ICarCategoryRepository from "../../../repositories/Interfaces/ICarCategoryRepository";
 
 interface IRequest {
   name: string;
   description: string;
 }
 
-export default class CarCategoryService {
+export default class CreateCarCategoryService {
   constructor(private carCategoryRepository: ICarCategoryRepository) {}
 
   public execute({ name, description }: IRequest): void {

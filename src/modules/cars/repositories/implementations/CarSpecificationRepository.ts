@@ -1,5 +1,5 @@
-import CarSpecificationModel from "../model/CarSpecificationModel";
-import ICarSpecificationDTO from "./DTOs/ICarSpecificationDTO";
+import CarSpecificationModel from "../../model/CarSpecificationModel";
+import ICarSpecificationDTO from "../DTOs/ICarSpecificationDTO";
 
 export default class SpecificationsRepository {
   private specifications: CarSpecificationModel[];
