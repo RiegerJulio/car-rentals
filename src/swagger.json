@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Car-Rentals API Documentation",
+    "description": "Creating a Car Rentals API",
+    "version": "1.0.0",
+    "contact": {
+      "email": "riegerproducoes@gmail.com"
+    }
+  },
+  "paths": {
+    "/categories": {
+      "post": {
+        "tags": [ "Car Category" ],
+        "summary": "Create a Car Category",
+        "description": "Create a new Car Category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Sedan"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Sedan Category"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category Already Exists"
+          }
+        }
+      },
+      "get": {
+        "tags": [ "Car Category" ],
+        "summary": "Get All Car Categories",
+        "description": "Get All Car Categories",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
